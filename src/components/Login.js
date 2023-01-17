@@ -1,9 +1,13 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 function Login(props) {
-    let [inputValue, setInputValue] = useState(props.idText);
-    let idText = inputValue;
-    console.log(idText)
+    let [inputValue, setInputValue] = useState('');
+    
+    props.setValue(inputValue)
+
+    function sendData() {
+        props.setValue(inputValue);
+    }
 
     return (
         <div className="login">
@@ -13,13 +17,14 @@ function Login(props) {
                         onChange={(e) => { setInputValue(e.target.value)}}/>
                     <Link to="/Cont">
                         <button type="button"
-                            onClick={(e) => { 
-                                if (idText == "") {
+                            onClick={(e) => {
+                                if (props.value == "") {
                                     alert("ID를 입력해주세요.")
                                     e.preventDefault()
-                                } 
-                         }}
-                        >Login</button>
+                                }
+                                sendData()
+                            }
+                        }>Login</button>
                     </Link>
                     
                 </form>

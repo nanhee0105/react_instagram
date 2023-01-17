@@ -5,7 +5,10 @@ let likeArr = [];
 function Post(props){
     let data = props.data;
     let index = props.index;
-    
+    let value = props.value;
+
+    console.log(value)
+
     let [heart, setHeart] = useState(true);
     let [likeHeart, setLikeHeart] = useState('🤍'); 
     let [likeNum, setLikeNum] = useState(data.likes);
@@ -65,7 +68,10 @@ function Post(props){
                         {
                             addComment.map((item, index) => {
                                 return <p>
-                                            <span className='name'>name</span>
+                                        <span className='name'>
+                                            {/* {value} */}
+                                        {value == "" ? 'name' :  value }
+                                        </span>
                                             <span className='content'>{addComment[index]}</span>
                                         </p>
                             })

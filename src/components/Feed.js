@@ -3,13 +3,13 @@ import Post from './Post';
 import data from '../data';
 
 
-function Content() {
+function Feed(props) {
     return (
         <div className="insta">
             {
                 data.map(function (item, index) {
                     return (
-                        <Post data={item} index={index}></Post>
+                        <Post data={item} index={index} value={props.value}></Post>
                     )
                 })
             }
@@ -20,4 +20,4 @@ function Content() {
    
 }
 
-export default Content;
+export default Feed;
