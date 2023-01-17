@@ -1,4 +1,7 @@
 import { useState, useRef, useCallback } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faComment, faHeart, faPaperPlane, faTrashCan } from "@fortawesome/free-regular-svg-icons";
+import { faEllipsis, faHeartBroken } from "@fortawesome/free-solid-svg-icons";
 
 let likeArr = [];
 
@@ -10,8 +13,9 @@ function Post(props){
     console.log(value)
 
     let [heart, setHeart] = useState(true);
-    let [likeHeart, setLikeHeart] = useState('🤍'); 
+    let [likeHeart, setLikeHeart] = useState(<FontAwesomeIcon icon={faHeart} />); 
     let [likeNum, setLikeNum] = useState(data.likes);
+
 
 
     let [inputVal, setInputVal] = useState('');
@@ -42,18 +46,18 @@ function Post(props){
                             <span className='likeClick' onClick={() => {
                                 if (heart == true) {
                                     setHeart(false);
-                                    setLikeHeart('❤️')
+                                    setLikeHeart(<FontAwesomeIcon icon={faHeartBroken} />)
                                     let copy = [data.likes+1]
                                     setLikeNum(copy)
                                 } else {
                                     setHeart(true);
-                                    setLikeHeart('🤍');
+                                    setLikeHeart(<FontAwesomeIcon icon={faHeart} />);
                                     let copy2 = [data.likes]
                                     setLikeNum(copy2)
                                 }
                             }}>{likeHeart}</span>
-                            <span>🗨️</span>
-                            <span>✈️</span>
+                            <span><FontAwesomeIcon icon={faComment} /></span>
+                            <span><FontAwesomeIcon icon={faPaperPlane} /></span>
                         </p>
                         <p>좋아요 {likeNum}개</p>
                     </div>
@@ -63,16 +67,20 @@ function Post(props){
                             <span className='name'>{data.name}</span>
                             <span className='content'>{data.content}</span>
                         </p>
-
                         
                         {
                             addComment.map((item, index) => {
-                                return <p>
-                                        <span className='name'>
-                                            {/* {value} */}
-                                        {value == "" ? 'name' :  value }
-                                        </span>
+                                return <p className='userAdd'>
+                                            <span className='name'>
+                                                {/* {value} */}
+                                            {value == "" ? 'name' :  value }
+                                            </span>
                                             <span className='content'>{addComment[index]}</span>
+                                           <span className='remove' onClick={() => { 
+                                            let copy = [...addComment];
+                                            copy.splice(index, 1);
+                                            setAddComment(copy)
+                                    }}><FontAwesomeIcon icon={faTrashCan} /></span>
                                         </p>
                             })
                         }

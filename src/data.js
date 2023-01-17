@@ -2,7 +2,7 @@ export default [
     {
         name: "Kim Hyun",
         userImage: "https://placeimg.com/100/100/arch",
-        postImage: "https://placeimg.com/640/480/arch",
+        postImage: "https://placeimg.com/640/640/arch",
         likes: 36,
         date: "May 15",
         liked: false,
@@ -12,7 +12,7 @@ export default [
     {
         name: "John Doe",
         userImage: "https://placeimg.com/200/200/people",
-        postImage: "https://placeimg.com/640/480/people",
+        postImage: "https://placeimg.com/640/640/people",
         likes: 20,
         date: "Apr 20",
         liked: false,
@@ -22,7 +22,7 @@ export default [
     {
         name: "Minny",
         userImage: "https://placeimg.com/100/100/animals",
-        postImage: "https://placeimg.com/640/480/animals",
+        postImage: "https://placeimg.com/640/640/animals",
         likes: 49,
         date: "Apr 4",
         liked: false,

@@ -15,7 +15,7 @@ function Login(props) {
                 <form>
                     <input type="text" placeholder="Email" value={inputValue}
                         onChange={(e) => { setInputValue(e.target.value)}}/>
-                    <Link to="/Cont">
+                    <Link to="/Feed">
                         <button type="button"
                             onClick={(e) => {
                                 if (props.value == "") {

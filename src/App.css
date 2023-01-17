@@ -15,18 +15,22 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   
 
 .innerWrap {width: 98%; margin:auto ;}
+.innerWrap .comment p {margin-bottom: 5px;}
+.innerWrap .userAdd {display: flex;}
+.innerWrap .userAdd .content {flex: 4;}
+.innerWrap .userAdd .remove {cursor: pointer;}
 
 .instaWrap {width: 100%; height: 100vh; margin: auto; font-family: consolas; position: relative; }
 .header {background-color: #fff;width: 100%;height: auto;position: sticky;top: 0;z-index: 5;display: block;border-bottom: 1px solid #e5e5e5;margin-bottom: 45px;}
 .header .headerWrap {max-width: 935px;margin: auto;padding: 25px 10px;display: flex;justify-content: space-between;}
-.header .headerWrap .icons Link  {width: 30px; height: 30px; display: inline-block; margin: 0 2px;}
-.header .headerWrap .icons Link > img {width: 100%;}
+.header .headerWrap .icons a  {width: 30px; height: 30px; display: inline-block; margin: 0 2px; font-size: 19px;}
+.header .headerWrap .icons a > img {width: 100%;}
 .header .headerWrap input {border-radius: 5px;}
 
 .insta {max-width: 600px; border-right: 1px solid #eee; border-left: 1px solid #eee; height: 100%; margin: auto;}
 
 
-.post {margin-bottom: 25px; border: 1px solid #e5e5e5;}
+.post {margin-bottom: 25px; border: 1px solid #e5e5e5; padding: 10px 0;}
 .post .postHeader {display: flex; align-items: center; width: 98%; height: 50px; margin: auto;}
 .post .postHeader .userImg {width: 40px;}
 .post .postHeader .userImg img {width: 100%;border-radius: 50%;}
@@ -34,7 +38,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 .post .posterBody .posterImg img {width: 100%;}
 .post .posterBody .icons p {margin-bottom: 5px;}
-.post .posterBody .icons p > span {cursor: pointer; user-select: none; margin: 0 4px;}
+.post .posterBody .icons p > span {cursor: pointer;-webkit-user-select: none;user-select: none;margin-right: 10px;font-size: 18px;}
 .post .posterBody .comment .name {font-weight: bold; margin-right: 10px;}
 .post .posterBody .addComment  {border-top: 1px solid #e5e5e5; margin-top: 15px; display: flex;}
 .post .posterBody .addComment textarea {margin: 10px 0; width: 91%;}
@@ -61,3 +65,29 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 .login .loginFooter { width: 100%; height: auto; border: 1px solid #e5e5e5; padding: 15px; text-align: center; margin-top: 15px;}
 
 .login .loginFooter span:nth-last-of-type(1) {color: #3897f0; margin-left: 15px;}
+
+
+/* Profile */
+.Profile {max-width: 935px; margin: auto; }
+.Profile .profileHeader {display: flex; justify-content: space-between; padding: 10px;}
+.Profile .profileHeader .profileImg {flex: 1;}
+.Profile .profileHeader .profileImg img {border-radius: 50%; width: 160px;}
+
+.Profile .profileHeader .profileCont {flex: 2}
+.Profile .profileHeader .profileCont .userId {font-size: 20px;}
+.Profile .profileHeader .profileCont > div {margin-bottom: 20px;}
+.Profile .profileHeader .profileCont > div > * {margin-right: 20px;}
+
+.Profile .profileHeader .profileCont .edit {background-color: #efefef; border-radius: 10px; padding: 5px 10px; cursor: pointer;}
+.Profile .profileHeader .profileCont .introduction p {line-height: 25px;}
+
+
+
+.Profile .profileBody {border-top: 1px solid #efefef; margin-top: 50px}
+.Profile .profileBody .tabBtn {display: flex;justify-content: center;}
+.Profile .profileBody .tabBtn span {width:auto; padding: 10px; margin: 0 10px; font-size: 14px; color: gray; cursor: pointer;}
+
+.Profile .profileBody .tabContWrap {display: flex; justify-content: space-between; padding-top: 20px;}
+
+.Profile .profileBody .tabContWrap >  div {width:32%;}
+.Profile .profileBody .tabContWrap > div > img {width: 100%;}
