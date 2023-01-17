@@ -1,25 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import Login from './components/Login';
+import Cont from './components/Cont';
+import { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
-function App() {
+
+function Insta() {
+  let idText = '';
+  console.log(idText)
+
+  let [login, setLogin] = useState(false);
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    <div className='instaWrap'>
+
+      <Router>
+        <Routes>
+          <Route path='/' element={<Login idText={idText} />}></Route>
+          <Route path='/Cont' element={<Cont />}></Route>
+        </Routes>
+      </Router>
+      
+
+      {/* <Login login={login} setLogin={setLogin}></Login> */}
+      {/* {login == true ? <Content/> : null} */}
+     
     </div>
+   
   );
 }
 
-export default App;
+export default Insta;
