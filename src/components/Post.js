@@ -12,11 +12,10 @@ function Post(props){
 
     console.log(value)
 
+
     let [heart, setHeart] = useState(true);
     let [likeHeart, setLikeHeart] = useState(<FontAwesomeIcon icon={faHeart} />); 
     let [likeNum, setLikeNum] = useState(data.likes);
-
-
 
     let [inputVal, setInputVal] = useState('');
     let [addComment, setAddComment] = useState(['입력한 댓글 내용..'])
@@ -46,6 +45,7 @@ function Post(props){
                             <span className='likeClick' onClick={() => {
                                 if (heart == true) {
                                     setHeart(false);
+
                                     setLikeHeart(<FontAwesomeIcon icon={faHeartBroken} />)
                                     let copy = [data.likes+1]
                                     setLikeNum(copy)
@@ -72,8 +72,7 @@ function Post(props){
                             addComment.map((item, index) => {
                                 return <p className='userAdd'>
                                             <span className='name'>
-                                                {/* {value} */}
-                                            {value == "" ? 'name' :  value }
+                                                {value == "" ? 'name' :  value }
                                             </span>
                                             <span className='content'>{addComment[index]}</span>
                                            <span className='remove' onClick={() => { 
@@ -103,12 +102,7 @@ function Post(props){
 
                  
                 </div> {/* innerWrap */}
-
-
             </div>
-
-
-            <div className='posterFooter'></div>
         </div>
     )
 

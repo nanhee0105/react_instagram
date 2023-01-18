@@ -1,10 +1,12 @@
-import data from "../data";
+import userData from "../userData";
+import MyFeed from "./MyFeed";
+
 function ProfileTabCont(props) {
     if (props.tab === 0) {
         return <div className="tabContWrap">
             {
-                data.map((item, index) => {
-                    return <div className='userImg'>1
+                userData[0].postData.map((item, index) => {
+                    return <div className='userImg'>
                         <img src={item.postImage}></img>
                     </div>
 
@@ -13,22 +15,13 @@ function ProfileTabCont(props) {
         </div>
     }
     if (props.tab === 1) {
-        return <div className="tabContWrap">
-            {
-                data.map((item, index) => {
-                    return <div className='userImg'>2
-                        <img src={item.postImage}></img>
-                    </div>
-
-                })
-            }
-        </div>
+        return <MyFeed value={props.value}></MyFeed>
     }
     if (props.tab === 2) {
         return <div className="tabContWrap">
             {
-                data.map((item, index) => {
-                    return <div className='userImg'>3
+                userData[0].tagData.map((item, index) => {
+                    return <div className='userImg'>
                         <img src={item.postImage}></img>
                     </div>
 

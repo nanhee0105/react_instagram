@@ -3,11 +3,10 @@ import userData from "../userData";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faComment, faBookmark, faHeart, faUser, fagear  } from "@fortawesome/free-regular-svg-icons";
 import { faArrowUpFromBracket, faEllipsis, faGear } from "@fortawesome/free-solid-svg-icons";
-import ProfileBody from "./ProfileBody";
-import ProfileTabCont from "./ProfileBody";
+import ProfileTabCont from "./ProfileTabCont";
 
 
-function Profile() {
+function Profile(props) {
     let [tab, setTab] = useState(0)
 
     return (
@@ -20,7 +19,9 @@ function Profile() {
 
                     <div className="profileCont">
                         <div>
-                            <span className="userId">{userData[0].userId}</span>
+                            <span className="userId">{
+                                props.value == "" ? 'i.am.nanhee' : props.value
+                            }</span>
                             <span className="edit">프로필 편집</span>
                             <span>
                                 <FontAwesomeIcon icon={faGear} />
@@ -46,13 +47,12 @@ function Profile() {
                     <div className="tabBtn">
                         <span onClick={() => {
                             setTab(0);
-                            
                         }}>
                             게시물
                         </span>
 
                         <span onClick={() => { setTab(1)}}>
-                            영상
+                            리스트
                         </span>
 
                         <span onClick={() => { setTab(2) }}>
@@ -60,9 +60,7 @@ function Profile() {
                         </span>
                     </div>
 
-                    <ProfileTabCont tab={ tab }></ProfileTabCont>
-
-                    
+                    <ProfileTabCont value={props.value} tab={ tab }></ProfileTabCont>
                 </div>
              </div>
         </>

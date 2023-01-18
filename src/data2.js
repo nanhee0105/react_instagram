@@ -7,6 +7,7 @@ export default [
         date: "May 15",
         liked: false,
         content: "오늘 무엇을 했냐면요 아무것도 안했어요 ?",
+        filter: "perpetua"
     },
     {
         name: "John Doe",
@@ -16,6 +17,7 @@ export default [
         date: "Apr 20",
         liked: false,
         content: "흔한 자랑스타그램",
+        filter: "clarendon"
     },
     {
         name: "Minny",
@@ -25,32 +27,6 @@ export default [
         date: "Apr 4",
         liked: false,
         content: "우리집 개는 화장실 물도 내림",
-    },
-    {
-        name: "i.am.nanhee",
-        userImage: "https://placeimg.com/100/100/people",
-        postImage: "https://placeimg.com/640/640/people",
-        likes: 17,
-        date: "May 15",
-        liked: false,
-        content: "구리 너무 귀여워",
-    },
-    {
-        name: "min-ho",
-        userImage: "https://placeimg.com/200/200/tech",
-        postImage: "https://placeimg.com/640/640/tech",
-        likes: 20,
-        date: "Apr 20",
-        liked: false,
-        content: "흔한 자랑스타그램",
-    },
-    {
-        name: "Minny",
-        userImage: "https://placeimg.com/100/100/grayscale",
-        postImage: "https://placeimg.com/640/640/grayscale",
-        likes: 49,
-        date: "Apr 4",
-        liked: false,
-        content: "우리집 개는 화장실 물도 내림",
+        filter: "lofi"
     }
 ]

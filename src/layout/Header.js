@@ -1,9 +1,8 @@
 import logo from './../images/instagram_icon.png'
 import { BrowserRouter as Router, Route, Routes, Link, useNavigate, Outlet } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
-import { faComment, faHeart, faUser } from "@fortawesome/free-regular-svg-icons";
-import { faRightToBracket, faEllipsis, faList } from "@fortawesome/free-solid-svg-icons";
+import { faUser } from "@fortawesome/free-regular-svg-icons";
+import { faRightToBracket, faList } from "@fortawesome/free-solid-svg-icons";
 
 function Header() {
 
@@ -12,7 +11,7 @@ function Header() {
             <hedaer className="header">
                 <div className="headerWrap">
                     <div className="icons">
-                        <Link to="/Feed">
+                        <Link to="/">
                             <img src={logo} alt="logo"></img>
                         </Link>
                         
@@ -25,7 +24,7 @@ function Header() {
                         <Link to="/Profile">
                             <FontAwesomeIcon icon={faUser} />
                         </Link>
-                        <Link to="/Login">
+                        <Link to="/">
                             <FontAwesomeIcon icon={faRightToBracket} />
                         </Link>
                     </div>

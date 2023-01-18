@@ -44,7 +44,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 .post .posterBody .addComment textarea {margin: 10px 0; width: 91%;}
 .post .posterBody .addComment button {cursor: pointer; padding: 0 10px; margin-top: 10px; height: 33px;}
 .post .posterBody .date span {font-size: 11px; color: grey;}
-
+.more {height: 50px;}
+.more button {border-radius: 5px; padding: 5px 15px; margin: auto; display: block;}
 
 /* login */
 .login {
@@ -87,7 +88,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 .Profile .profileBody .tabBtn {display: flex;justify-content: center;}
 .Profile .profileBody .tabBtn span {width:auto; padding: 10px; margin: 0 10px; font-size: 14px; color: gray; cursor: pointer;}
 
-.Profile .profileBody .tabContWrap {display: flex; justify-content: space-between; padding-top: 20px;}
-
-.Profile .profileBody .tabContWrap >  div {width:32%;}
-.Profile .profileBody .tabContWrap > div > img {width: 100%;}
+.Profile .profileBody .tabContWrap {display: flex;justify-content: space-between;padding-top: 20px;flex-direction: row;flex-wrap: wrap;}
+.Profile .profileBody .tabContWrap >  div {width:32.5%; margin-bottom: 1%;}
+.Profile .profileBody .tabContWrap >  div img {width: 100%;}
