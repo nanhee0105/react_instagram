@@ -1,4 +1,4 @@
-import userData from "../userData";
+import userData from "../data/userData";
 import MyFeed from "./MyFeed";
 
 function ProfileTabCont(props) {

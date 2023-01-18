@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Post from './Post';
-import userData from "../userData";
+import userData from "../data/userData";
 
 
 function MyFeed(props) {

@@ -1,8 +1,7 @@
 import { useState } from "react";
-import userData from "../userData";
+import userData from "../data/userData";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faComment, faBookmark, faHeart, faUser, fagear  } from "@fortawesome/free-regular-svg-icons";
-import { faArrowUpFromBracket, faEllipsis, faGear } from "@fortawesome/free-solid-svg-icons";
+import { faGear } from "@fortawesome/free-solid-svg-icons";
 import ProfileTabCont from "./ProfileTabCont";
 
 
