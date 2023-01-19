@@ -6,14 +6,12 @@ import data2 from '../data/data2';
 
 function Feed(props) {
     let [dataValue, setDataValue] = useState(data);
-    console.log(dataValue)
-
     return (
         <div className="insta">
             {
                 dataValue.map(function (item, index) {
                     return (
-                        <Post data={item} index={index} value={props.value}></Post>
+                        <Post data={item} index={index} value={props.value} key={index}></Post>
                     )
                 })
             }

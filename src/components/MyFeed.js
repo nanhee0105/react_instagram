@@ -4,7 +4,6 @@ import userData from "../data/userData";
 
 
 function MyFeed(props) {
-    console.log(props)
     let [dataValue, setDataValue] = useState(userData[0].postData);
 
     return (
@@ -12,7 +11,7 @@ function MyFeed(props) {
             {
                 dataValue.map(function (item, index) {
                     return (
-                        <Post data={item} index={index} value={props.value}></Post>
+                        <Post data={item} index={index} value={props.value} key={index}></Post>
                     )
                 })
             }

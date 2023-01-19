@@ -1,17 +1,14 @@
 import userData from "../data/userData";
 import MyFeed from "./MyFeed";
+import MyPostList from "./MyPostList";
+import MyTagList from "./MyTagList";
+
+
 
 function ProfileTabCont(props) {
     if (props.tab === 0) {
         return <div className="tabContWrap">
-            {
-                userData[0].postData.map((item, index) => {
-                    return <div className='userImg'>
-                        <img src={item.postImage}></img>
-                    </div>
-
-                })
-            }
+            <MyPostList value={props.value}></MyPostList>
         </div>
     }
     if (props.tab === 1) {
@@ -20,12 +17,7 @@ function ProfileTabCont(props) {
     if (props.tab === 2) {
         return <div className="tabContWrap">
             {
-                userData[0].tagData.map((item, index) => {
-                    return <div className='userImg'>
-                        <img src={item.postImage}></img>
-                    </div>
-
-                })
+                <MyTagList value={props.value}></MyTagList>
             }
         </div>
     }

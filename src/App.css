@@ -1,18 +1,9 @@
 /* reset */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, button, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tbody, tfoot, thead,  article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; line-height: 1.3; vertical-align: baseline; box-sizing: border-box; border: none; outline: none; font-family: 'Noto Sans KR', sans-serif;   font-size: 1.0em; color: #333;}
-  textarea {
-      border: none;
-      outline: none;
-      background-color: transparent;
-      -webkit-border-radius: 0;
-      -moz-border-radius: 0;
-      -o-border-radius: 0;
-      border-radius: 0;
-      overflow: hidden;
-      resize: none;
-      box-sizing: border-box;
-  }
-  
+body {font-size: 16px;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, button, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tbody, tfoot, thead,  article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; line-height: 1.3; vertical-align: baseline; box-sizing: border-box; border: none; outline: none; font-family: 'Noto Sans KR', sans-serif;   color: #333;}
+textarea {border: none;outline: none;background-color: transparent;-webkit-border-radius: 0;-moz-border-radius: 0;-o-border-radius: 0;border-radius: 0;overflow: hidden;resize: none;box-sizing: border-box;}
+
+
 
 .innerWrap {width: 98%; margin:auto ;}
 .innerWrap .comment p {margin-bottom: 5px;}
@@ -21,12 +12,13 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 .innerWrap .userAdd .remove {cursor: pointer;}
 
 .instaWrap {width: 100%; height: 100vh; margin: auto; font-family: consolas; position: relative; }
-.header {background-color: #fff;width: 100%;height: auto;position: sticky;top: 0;z-index: 5;display: block;border-bottom: 1px solid #e5e5e5;margin-bottom: 45px;}
-.header .headerWrap {max-width: 935px;margin: auto;padding: 25px 10px;display: flex;justify-content: space-between;}
-.header .headerWrap .icons a  {width: 30px; height: 30px; display: inline-block; margin: 0 2px; font-size: 19px;}
+.header {background-color: #fff;width: 100%;height: auto;position: sticky;top: 0;z-index: 5;display: block;border-bottom: 1px solid #e5e5e5;margin-bottom: 25px;}
+.header .headerWrap {max-width: 935px;margin: auto;padding: 20px 10px;display: flex;justify-content: space-between;}
+.header .headerWrap .icons a  {width: 30px; height: 30px; display: inline-block; margin: 0 3px; font-size: 1.3em;}
 .header .headerWrap .icons a > img {width: 100%;}
-.header .headerWrap input {border-radius: 5px;}
-
+.header .headerWrap input.serach {border-radius: 5px;}
+.header .headerWrap .inputfile input {display: none;}
+.header .headerWrap .inputfile label {cursor: pointer;}
 .insta {max-width: 600px; border-right: 1px solid #eee; border-left: 1px solid #eee; height: 100%; margin: auto;}
 
 
@@ -37,13 +29,13 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 .post .postHeader .userName {margin-left: 10px;}
 
 .post .posterBody .posterImg img {width: 100%;}
-.post .posterBody .icons p {margin-bottom: 5px;}
-.post .posterBody .icons p > span {cursor: pointer;-webkit-user-select: none;user-select: none;margin-right: 10px;font-size: 18px;}
+.post .posterBody .icons p {margin-bottom: 8px;}
+.post .posterBody .icons p > span {cursor: pointer;-webkit-user-select: none;user-select: none;margin-right: 13px;font-size: 1.4em;}
 .post .posterBody .comment .name {font-weight: bold; margin-right: 10px;}
 .post .posterBody .addComment  {border-top: 1px solid #e5e5e5; margin-top: 15px; display: flex;}
-.post .posterBody .addComment textarea {margin: 10px 0; width: 91%;}
+.post .posterBody .addComment textarea {margin: 10px 0; flex: 2; font-size: 0.9em;}
 .post .posterBody .addComment button {cursor: pointer; padding: 0 10px; margin-top: 10px; height: 33px;}
-.post .posterBody .date span {font-size: 11px; color: grey;}
+.post .posterBody .date span {font-size: 0.8em; color: grey;}
 .more {height: 50px;}
 .more button {border-radius: 5px; padding: 5px 15px; margin: auto; display: block;}
 
@@ -59,9 +51,9 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 .login .loginBody {width: 100%; height:auto; border: 1px solid #e5e5e5; padding: 55px;} 
 .login .loginBody form {width: 100%;}
-.login .loginBody input {border: 1px solid rgb(230, 230, 230);border-radius: 4px;background-color: rgb(250, 250, 250);height: 35px;font-size: 12px;padding: 0px 15px;width: 100%;box-sizing: border-box;}
+.login .loginBody input {border: 1px solid rgb(230, 230, 230);border-radius: 4px;background-color: rgb(250, 250, 250);height: 35px;font-size: 0.9em;padding: 0px 15px;width: 100%;box-sizing: border-box;}
 
-  .login .loginBody button {width: 100%; border: 0px; border-radius: 4px; color: white; font-weight: 600; background-color: #3897f0; text-align: center; padding: 7px 0px; font-size: 14px; cursor: pointer; margin-top: 20px}
+  .login .loginBody button {width: 100%; border: 0px; border-radius: 4px; color: white; font-weight: 600; background-color: #3897f0; text-align: center; padding: 7px 0px; font-size: 1em; cursor: pointer; margin-top: 20px}
 
 .login .loginFooter { width: 100%; height: auto; border: 1px solid #e5e5e5; padding: 15px; text-align: center; margin-top: 15px;}
 
@@ -72,10 +64,10 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 .Profile {max-width: 935px; margin: auto; }
 .Profile .profileHeader {display: flex; justify-content: space-between; padding: 10px;}
 .Profile .profileHeader .profileImg {flex: 1;}
-.Profile .profileHeader .profileImg img {border-radius: 50%; width: 160px;}
+.Profile .profileHeader .profileImg img {border-radius: 50%; width: 70%;}
 
 .Profile .profileHeader .profileCont {flex: 2}
-.Profile .profileHeader .profileCont .userId {font-size: 20px;}
+.Profile .profileHeader .profileCont .userId {font-size: 1.4em;}
 .Profile .profileHeader .profileCont > div {margin-bottom: 20px;}
 .Profile .profileHeader .profileCont > div > * {margin-right: 20px;}
 
@@ -84,10 +76,62 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 
 
-.Profile .profileBody {border-top: 1px solid #efefef; margin-top: 50px}
+.Profile .profileBody {border-top: 1px solid #efefef; margin-top: 30px}
 .Profile .profileBody .tabBtn {display: flex;justify-content: center;}
-.Profile .profileBody .tabBtn span {width:auto; padding: 10px; margin: 0 10px; font-size: 14px; color: gray; cursor: pointer;}
-
+.Profile .profileBody .tabBtn span {width:auto; padding: 15px; margin: 0 10px; font-size: 0.85em; color: gray; cursor: pointer;}
+.Profile .profileBody .tabBtn span.active {border-top: 1px solid #0089ff;
+  font-weight: bold;}
 .Profile .profileBody .tabContWrap {display: flex;justify-content: space-between;padding-top: 20px;flex-direction: row;flex-wrap: wrap;}
-.Profile .profileBody .tabContWrap >  div {width:32.5%; margin-bottom: 1%;}
+.Profile .profileBody .tabContWrap >  div {width:32.5%; margin-bottom: 1%; position: relative; cursor: pointer;}
 .Profile .profileBody .tabContWrap >  div img {width: 100%;}
+.Profile .profileBody .tabContWrap >  div .hoverBox {width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color:rgba(0,0,0,0.5); display: flex; justify-content: center; align-items: center;}
+.Profile .profileBody .tabContWrap >  div .hoverBox div span {color: #fff; margin: 0 10px;}
+.Profile .profileBody .tabContWrap >  div .hoverBox div span > svg {margin-right: 5px;}
+
+ @media (max-width: 481px) {
+   body {font-size: 15px}
+   .Profile .profileHeader .profileImg img {width: 85%;}
+   .edit {display: block; text-align: center; margin-top: 15px;}
+   .Profile .profileHeader .profileCont > div > * {margin-right: 15px;}
+ }
+
+.fileUpload {width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); position: absolute; top: 0;  left: 0; z-index: 10;}
+ .fileUpload .container {
+   background-color: red;
+   width: 60%;
+   padding-bottom: 60%;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   z-index: 2;
+ }
+
+  .fileUpload .container .imgWrap {background-color: #fff;
+  width: 100%;
+  padding-bottom: 100%;
+  position: absolute;
+  top: 0;}
+
+.fileUpload .container .textWrap {background-color: #fff;
+  width: 100%;
+  padding-bottom: 100%;
+  position: absolute;
+  top: 0;}
+.fileUpload .container .textWrap textarea {width: 100%; padding: 5px; box-sizing:border-box;}
+.fileUpload .container .imgWrap img {width: 100%; position: absolute; top: 0;}
+
+.fileUpload .container .nextBtn {
+      position: absolute;
+        top: -33px;
+        right: 0;
+        background: #fff;
+        cursor: pointer;
+        padding: 5px 8px;
+        border-radius: 6px;
+}

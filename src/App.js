@@ -12,9 +12,9 @@ function App() {
   const [value, setValue] = useState("");
 
   return (
+    
     <div className='instaWrap'>
-
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route path="/" element={<Login value={value} setValue={setValue} />}></Route>
           <Route path="/" element={<Outlet />}>
@@ -25,11 +25,6 @@ function App() {
             </Route>
         </Routes>
       </Router>
-     
-      
-      {/* <Login login={login} setLogin={setLogin}></Login> */}
-      {/* {login == true ? <Content/> : null} */}
-     
     </div>
    
   );

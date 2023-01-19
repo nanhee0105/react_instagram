@@ -1,7 +1,7 @@
 import { useState,} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faComment, faHeart, faPaperPlane, faTrashCan } from "@fortawesome/free-regular-svg-icons";
-import { faEllipsis, faHeartBroken } from "@fortawesome/free-solid-svg-icons";
+import { faHeartBroken } from "@fortawesome/free-solid-svg-icons";
 
 let likeArr = [];
 
@@ -10,15 +10,13 @@ function Post(props){
     let index = props.index;
     let value = props.value;
 
-    console.log(value)
-
 
     let [heart, setHeart] = useState(true);
     let [likeHeart, setLikeHeart] = useState(<FontAwesomeIcon icon={faHeart} />); 
     let [likeNum, setLikeNum] = useState(data.likes);
 
     let [inputVal, setInputVal] = useState('');
-    let [addComment, setAddComment] = useState(['입력한 댓글 내용..'])
+    let [addComment, setAddComment] = useState([])
 
    
 
@@ -72,7 +70,7 @@ function Post(props){
                             addComment.map((item, index) => {
                                 return <p className='userAdd'>
                                             <span className='name'>
-                                                {value == "" ? 'name' :  value }
+                                                {value == "" ? 'i.am.nanhee' :  value }
                                             </span>
                                             <span className='content'>{addComment[index]}</span>
                                            <span className='remove' onClick={() => { 

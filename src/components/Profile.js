@@ -1,12 +1,11 @@
 import { useState } from "react";
 import userData from "../data/userData";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGear } from "@fortawesome/free-solid-svg-icons";
 import ProfileTabCont from "./ProfileTabCont";
 
 
 function Profile(props) {
     let [tab, setTab] = useState(0)
+    let [click, setClick] = useState(true)
 
     return (
         <>
@@ -22,15 +21,12 @@ function Profile(props) {
                                 props.value == "" ? 'i.am.nanhee' : props.value
                             }</span>
                             <span className="edit">프로필 편집</span>
-                            <span>
-                                <FontAwesomeIcon icon={faGear} />
-                            </span>
                         </div>
 
                         <div>
-                            <span>게시물 {userData[0].post}</span>
-                            <span>팔로워 {userData[0].Follow}</span>
-                            <span>팔로우 {userData[0].Following}</span>
+                            <span>게시물 <strong>{userData[0].post}</strong></span>
+                            <span>팔로워 <strong>{userData[0].Follow}</strong></span>
+                            <span>팔로우 <strong>{userData[0].Following}</strong></span>
                         </div>
 
                         <div className="introduction">
@@ -44,17 +40,17 @@ function Profile(props) {
 
                 <div className="profileBody">
                     <div className="tabBtn">
-                        <span onClick={() => {
-                            setTab(0);
+                        <span className={ tab === 0 ? "active" : '' } onClick={() => {
+                            setTab(0); setClick(true);
                         }}>
                             게시물
                         </span>
 
-                        <span onClick={() => { setTab(1)}}>
+                        <span className={ tab === 1 ? "active" : '' }onClick={() => { setTab(1); setClick(true)}}>
                             리스트
                         </span>
 
-                        <span onClick={() => { setTab(2) }}>
+                        <span className={ tab === 2 ? "active" : '' }onClick={() => { setTab(2); setClick(true) }}>
                             태그
                         </span>
                     </div>
