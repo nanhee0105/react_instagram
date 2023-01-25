@@ -9,6 +9,11 @@ function Login(props) {
         props.setValue(inputValue);
     }
 
+    const regexEng = /^[a-z|A-Z]+$/;
+    const regexNum = /^[0-9]+$/;
+    const regexEN = /^[A-Za-z0-9]+$/;
+
+    console.log(props.value)
     return (
         <div className="login">
             <div className="loginBody">
@@ -20,9 +25,14 @@ function Login(props) {
                             onClick={(e) => {
                                 if (props.value == "") {
                                     alert("ID를 입력해주세요.")
-                                    e.preventDefault()
+                                    e.preventDefault();
+                                } else if (regexEng.test(props.value) || regexNum.test(props.value) || regexEN.test(props.value)) {
+                                    sendData();
+                                } else {
+                                    alert("숫자나 영문만 입력하실 수 있습니다.");
+                                    e.preventDefault();
+                                    props.setValue("r");
                                 }
-                                sendData()
                             }
                         }>Login</button>
                     </Link>

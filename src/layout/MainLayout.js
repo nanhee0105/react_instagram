@@ -3,32 +3,29 @@ import Header from "./Header";
 import { BrowserRouter as Router, Route, Routes, Link, useNavigate, Outlet } from 'react-router-dom'
 import userData from "../data/userData";
 
-function MainLayout() {
+function MainLayout(props) {
     let [myData, setmyData] = useState(userData[0].postData);
     let [fileImage, setFileImage] = useState("");
     let [uploadVal, setUploadVal] = useState("");
     // 파일 저장
-    let saveFileImage = (e) => {
+    const saveFileImage = (e) => {
         setFileImage(URL.createObjectURL(e.target.files[0]));
     };
 
-
     let addObj = {
-        name: "추가",
-        userImage: fileImage,
+        name: props.value == '' ? 'i.am.nanhee' : props.value,
+        userImage: 'https://placeimg.com/200/200/any',
         postImage: fileImage,
-        likes: 36,
-        comments: uploadVal,
+        likes: 0,
+        comments: 0,
         date: "May 15",
         liked: false,
-        content: "uploadVal",
+        content: uploadVal,
     }
-
-    console.log(myData)
 
     return (
         <>
-            <Header myData={myData} setmyData={setmyData} fileImage={fileImage} saveFileImage={saveFileImage} uploadVal={uploadVal} setUploadVal={setUploadVal} addObj={addObj}></Header>
+            <Header myData={myData} setmyData={setmyData} fileImage={fileImage} saveFileImage={saveFileImage} uploadVal={uploadVal} setUploadVal={setUploadVal} addObj={addObj} setFileImage={setFileImage}></Header>
             <Outlet context={{myData}}></Outlet>
         </>
     )

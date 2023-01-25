@@ -8,7 +8,7 @@ import MyTagList from "./MyTagList";
 function ProfileTabCont(props) {
     if (props.tab === 0) {
         return <div className="tabContWrap">
-            <MyPostList value={props.value} data={props.data}></MyPostList>
+            <MyPostList value={props.value} ></MyPostList>
         </div>
     }
     if (props.tab === 1) {
