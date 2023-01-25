@@ -7,10 +7,9 @@ import Profile from './components/Profile';
 import { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link, useNavigate, Outlet } from 'react-router-dom'
 
-function App() {
+function App(props) {
 
   const [value, setValue] = useState("");
-
   return (
     
     <div className='instaWrap'>
@@ -18,7 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Login value={value} setValue={setValue} />}></Route>
           <Route path="/" element={<Outlet />}>
-              <Route element={<MainLayout />}>
+            <Route element={<MainLayout /> }>
                 <Route path='/Feed' element={<Feed value={value} />}></Route>
                 <Route path='/Profile' element={<Profile value={value} />}></Route>
               </Route>

@@ -6,7 +6,7 @@ import ProfileTabCont from "./ProfileTabCont";
 function Profile(props) {
     let [tab, setTab] = useState(0)
     let [click, setClick] = useState(true)
-
+   
     return (
         <>
             <div className="Profile">
@@ -55,7 +55,7 @@ function Profile(props) {
                         </span>
                     </div>
 
-                    <ProfileTabCont value={props.value} tab={ tab }></ProfileTabCont>
+                    <ProfileTabCont value={props.value} tab={tab} data={props.data}></ProfileTabCont>
                 </div>
              </div>
         </>

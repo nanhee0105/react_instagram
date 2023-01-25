@@ -1,10 +1,14 @@
 import { useState } from 'react';
 import MyPost from './MyPost';
 import userData from "../data/userData";
+import { useOutletContext } from "react-router-dom";
 
-function MyPostList() {
-    let [dataValue, setDataValue] = useState(userData[0].postData);
-
+function MyPostList(props) {
+    const { myData } = useOutletContext()
+    
+    let [dataValue, setDataValue] = useState(myData);
+    console.log(dataValue)
+    console.log(myData)
     return (
         <>
             {

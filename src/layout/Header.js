@@ -6,19 +6,17 @@ import { faRightToBracket, faList, faPlus } from "@fortawesome/free-solid-svg-ic
 import { useState } from 'react';
 import Upload from '../components/Upload';
 
-function Header() {
-    let [next, setNext] = useState(0);
-    let [fileImage, setFileImage] = useState("");
-    let [uploadVal, setUploadVal] = useState("");
 
-    console.log(fileImage)
-    console.log(uploadVal)
-    // 파일 저장
-    let saveFileImage = (e) => {
-        setFileImage(URL.createObjectURL(e.target.files[0]));
-    };
+function Header(props) {
+    let fileImage = props.fileImage;
+    let saveFileImage = props.saveFileImage;
 
-    console.log(next)
+    let uploadVal = props.uploadVal;
+    let setUploadVal = props.setUploadVal;  
+    let addObj = props.addObj;  
+    let myData = props.myData
+    let setmyData = props.setmyData
+
     return (
         <>
             <hedaer className="header">
@@ -31,15 +29,11 @@ function Header() {
                     </div>
                     <input type="text" placeholder="Search" className='serach'></input>
                     <div className="icons">
-
                   
-
                         <a className='inputfile' onChange={saveFileImage}>
                             <input type="file" id="file"  ></input>
                             <label for="file" accept="image/*"><FontAwesomeIcon icon={faPlus} /></label>
                         </a>
-
-                       
                        
                         <Link to="/Feed">
                             <FontAwesomeIcon icon={faList} />
@@ -55,9 +49,12 @@ function Header() {
             </hedaer>
 
 
-            {fileImage != '' ? <Upload fileImage={fileImage} saveFileImage={saveFileImage} next={next} setNext={setNext} uploadVal={uploadVal} setUploadVal={setUploadVal} /> : null}
+            {fileImage != '' ? <Upload fileImage={fileImage} saveFileImage={saveFileImage} uploadVal={uploadVal} setUploadVal={setUploadVal}
+                addObj={addObj}
+                myData={myData} setmyData={setmyData}
 
-            { next == 2 ? 'a' : 'b' }
+            /> : null}
+
 
            
         </>
