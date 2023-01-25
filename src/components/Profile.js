@@ -55,7 +55,8 @@ function Profile(props) {
                         </span>
                     </div>
 
-                    <ProfileTabCont value={props.value} tab={tab} data={props.data}></ProfileTabCont>
+                    {console.log(props.data)}
+                    <ProfileTabCont value={props.value} tab={tab} ></ProfileTabCont>
                 </div>
              </div>
         </>

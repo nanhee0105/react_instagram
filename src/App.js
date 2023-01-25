@@ -17,7 +17,7 @@ function App(props) {
         <Routes>
           <Route path="/" element={<Login value={value} setValue={setValue} />}></Route>
           <Route path="/" element={<Outlet />}>
-            <Route element={<MainLayout /> }>
+            <Route element={<MainLayout value={value} /> }>
                 <Route path='/Feed' element={<Feed value={value} />}></Route>
                 <Route path='/Profile' element={<Profile value={value} />}></Route>
               </Route>

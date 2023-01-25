@@ -17,6 +17,16 @@ function Header(props) {
     let myData = props.myData
     let setmyData = props.setmyData
 
+    let setFileImage = props.setFileImage
+
+    let [show, setShow] = useState(true);
+    const deleteFileImage = () => {
+        URL.revokeObjectURL(fileImage);
+        setFileImage("");
+    };
+    console.log(fileImage)
+
+    console.log(show)
     return (
         <>
             <hedaer className="header">
@@ -30,7 +40,11 @@ function Header(props) {
                     <input type="text" placeholder="Search" className='serach'></input>
                     <div className="icons">
                   
-                        <a className='inputfile' onChange={saveFileImage}>
+                        <a className='inputfile' onChange={saveFileImage} onClick={() => {
+                            setShow(true)
+                            setUploadVal('');
+                            setFileImage("");
+                        }}>
                             <input type="file" id="file"  ></input>
                             <label for="file" accept="image/*"><FontAwesomeIcon icon={faPlus} /></label>
                         </a>
@@ -49,14 +63,17 @@ function Header(props) {
             </hedaer>
 
 
-            {fileImage != '' ? <Upload fileImage={fileImage} saveFileImage={saveFileImage} uploadVal={uploadVal} setUploadVal={setUploadVal}
+            {fileImage != '' ? <Upload
+                fileImage={fileImage}
+                saveFileImage={saveFileImage}
+                uploadVal={uploadVal}
+                setUploadVal={setUploadVal}
                 addObj={addObj}
-                myData={myData} setmyData={setmyData}
-
+                myData={myData}
+                setmyData={setmyData}
+                show={show}
+                setShow={setShow}
             /> : null}
-
-
-           
         </>
     )
 }
