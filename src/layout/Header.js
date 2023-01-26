@@ -24,7 +24,6 @@ function Header(props) {
         URL.revokeObjectURL(fileImage);
         setFileImage("");
     };
-
     return (
         <>
             <hedaer className="header">

@@ -11,6 +11,7 @@ function MainLayout(props) {
     const saveFileImage = (e) => {
         setFileImage(URL.createObjectURL(e.target.files[0]));
     };
+   
 
     let addObj = {
         name: props.value == '' ? 'i.am.nanhee' : props.value,
